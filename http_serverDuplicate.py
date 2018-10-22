@@ -11,12 +11,13 @@ class HttpServer:
 
 class myHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        time = choice(["Hoy parece que va a llover","Hoy parece que hace sol", "Hoy parece que hace mucho frio", "Hoy parece que nos congelamos"])
+        # time = choice(["Hoy parece que va a llover","Hoy parece que hace sol", "Hoy parece que hace mucho frio", "Hoy parece que nos congelamos"])
+        # print(time)
         self.send_response(201)
         self.send_header('Content-type','text/html')
         self.end_headers()
         # Ahora modificalo para que imprima de forma aleatoria los mensajes
-        self.wfile.write(bytes(time, 'utf8'))
+        self.wfile.write(b"hola Mundo")
         return
 
 print("Servidor en el puerto 8888")
